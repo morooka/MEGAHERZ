@@ -4,7 +4,6 @@
 #include "ofxOpenCv.h"
 #include "ofxSyphon.h"
 #include "ofxKinect.h"
-#include "ofxSimpleSerial.h"
 
 
 class testApp : public ofBaseApp{
@@ -26,16 +25,16 @@ class testApp : public ofBaseApp{
     bool                LearnBakground,bDustMask,bfeedback,bImage;
     
     ofxCvColorImage     colorImg,colorImg2;
-	ofxCvGrayscaleImage grayImage,grayImage2; // grayscale depth image
-	ofxCvGrayscaleImage grayThreshNear;       // the near thresholded image
-	ofxCvGrayscaleImage grayThreshFar;        // the far thresholded image
-	ofxCvGrayscaleImage graydiff,grayBg,graydiff2,grayBg2;
+    ofxCvGrayscaleImage grayImage,grayImage2; // grayscale depth image
+    ofxCvGrayscaleImage grayThreshNear;       // the near thresholded image
+    ofxCvGrayscaleImage grayThreshFar;        // the far thresholded image
+    ofxCvGrayscaleImage graydiff,grayBg,graydiff2,grayBg2;
     
-	ofxCvContourFinder  contourFinder,contourFinder2;
+    ofxCvContourFinder  contourFinder,contourFinder2;
     ofVideoGrabber      vidGrabber,vidGrabber2;
     
     int                 threshold,threshold2;
-    bool				bLearnBakground,bDrawVideo;
+    bool		bLearnBakground,bDrawVideo;
     
     std::vector<ofxCvBlob>::iterator blob;
     std::vector<ofxCvBlob>::iterator blob2;
@@ -49,17 +48,9 @@ class testApp : public ofBaseApp{
     
     ofxKinect kinect;
     
-    bool      bThreshWithOpenCV;
-	bool      bDrawPointCloud;
-    bool      bReversePoints;
+    bool      bThreshWithOpenCV,bDrawPointCloud,bReversePoints;
 	
-	int       nearThreshold;
-	int       farThreshold;
-    int       angle;
-       
-    ofxSimpleSerial	serial;
-    string		    message;
-    bool		    remember;
+    int       nearThreshold,farThreshold,angle;
     
     float counter;
     
