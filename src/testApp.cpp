@@ -404,7 +404,7 @@ void testApp::setup(){
     ofBackground(0, 0, 0);
     
     colorImg.allocate(kinect.width, kinect.height);
-	grayImage.allocate(kinect.width, kinect.height);
+    grayImage.allocate(kinect.width, kinect.height);
     grayBg.allocate(kinect.width, kinect.height);
     graydiff.allocate(kinect.width, kinect.height);
     
@@ -413,8 +413,8 @@ void testApp::setup(){
     vidGrabber.setVerbose(true);
     vidGrabber.initGrabber(640, 480);
     
-	kinect.setRegistration(true);
-	kinect.init(true,false,true);
+    kinect.setRegistration(true);
+    kinect.init(true,false,true);
     kinect.open();
        
     threshold = 255;
@@ -431,20 +431,20 @@ void testApp::setup(){
     centroidY4 = 0;
        
     colorImg2.allocate(kinect.width, kinect.height);
-	grayImage2.allocate(kinect.width, kinect.height);
+    grayImage2.allocate(kinect.width, kinect.height);
     grayBg2.allocate(kinect.width, kinect.height);
     graydiff2.allocate(kinect.width, kinect.height);
     
     grayThreshNear.allocate(kinect.width, kinect.height);
-	grayThreshFar.allocate(kinect.width, kinect.height);
+    grayThreshFar.allocate(kinect.width, kinect.height);
 
     ofxUGen::instance().setup();    
         
     mainOutputSyphonServer.setName("Main Output");
     
     nearThreshold = 255;
-	farThreshold =190;
-	bThreshWithOpenCV = true;
+    farThreshold =190;
+    bThreshWithOpenCV = true;
    
     // zero the tilt on startup
 	angle = 1;
@@ -481,7 +481,7 @@ void testApp::setup(){
     shader.setupShaderFromSource(GL_FRAGMENT_SHADER, shaderProgram);
     shader.linkProgram();
     
-    // Let«s clear the FBO«s
+    // Letï¿½s clear the FBOï¿½s
     // otherwise it will bring some junk with it from the memory
     maskFbo.begin();
     ofClear(0,0,0,255);
@@ -693,7 +693,7 @@ void testApp::draw(){
     ofColor cyan = ofColor::fromHex(0x00abec);
     ofColor magenta_custom = ofColor::fromHex(0xfeeefe);
     
-    if (bDustMask == false) {                       //========================================bGrayImage
+    if (bDustMask == false) {                       //========================================bDustMask
         bHouseDustDraw = true;
         if (contourFinder.nBlobs > 0) {
             houseDustVolume = 10;
@@ -718,7 +718,7 @@ void testApp::draw(){
         }
    }
     
-    if (bDustMask == true) {                            //=====================bGrayImage == true
+    if (bDustMask == true) {                            //=====================bDustMask == true
         bHouseDustDraw = false;
         bBrushDown = false;
         houseDustVolume = 0;
