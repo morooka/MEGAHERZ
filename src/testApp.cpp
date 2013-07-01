@@ -1,5 +1,4 @@
 #include "testApp.h"
-
 #include "ofxUGen.h"
 
 int synthX1 = 0;
@@ -687,7 +686,7 @@ void testApp::update(){
 void testApp::draw(){
     glShadeModel(GL_SMOOTH);
     glEnable(GL_LINE_SMOOTH);
-	glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);
+    glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);
     ofSetLineWidth(1);
     ofBackground(0);
     ofColor cyan = ofColor::fromHex(0x00abec);
@@ -969,75 +968,86 @@ void testApp::draw(){
 	stringstream reportStr;
 	reportStr 
     << "threshold " << threshold << endl
-     << "nearThreshold:" << nearThreshold << endl
+    << "nearThreshold:" << nearThreshold << endl
     <<"farThreshold:"<< farThreshold << endl
     << "cF1 " << contourFinder.nBlobs << endl
     << "cF2 " << contourFinder2.nBlobs << endl
     <<"fps: " << ofGetFrameRate();
-	ofDrawBitmapString(reportStr.str(), 20, 20);
+    ofDrawBitmapString(reportStr.str(), 20, 20);
 }
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
     
     switch (key){
-		case ' ':
-			bLearnBakground = true;
-			break;
-		case '+':
-        case ';':
-			threshold ++;
-			if (threshold > 255) threshold = 255;
-			break;
-		case '-':
-			threshold --;
-			if (threshold < 0) threshold = 0;
-			break;
-        case 'v':
-            vidGrabber.videoSettings();
-            break;
-        case 't':
-			bThreshWithOpenCV = !bThreshWithOpenCV;
-			break;
-            
-        case '>':
-		case '.':
-			farThreshold ++;
-			if (farThreshold > 255) farThreshold = 255;
-			break;
-			
-		case '<':
-		case ',':
-			farThreshold --;
-			if (farThreshold < 0) farThreshold = 0;
-			break;
-        case '/':
-			nearThreshold ++;
-			if (nearThreshold > 255) nearThreshold = 255;
-			break;
-        case '_':
-			nearThreshold --;
-			if (nearThreshold < 0) nearThreshold = 0;
-			break;
+    	case ' ':
+    	bLearnBakground = true;
+    	break;
+    	
+    	case '+':
+    	case ';':
+    	threshold ++;
+    	if (threshold > 255) threshold = 255;
+    	break;
+    	
+    	case '-':
+    	threshold --;
+    	if (threshold < 0) threshold = 0;
+    	break;
+    	
+    	case 'v':
+    	vidGrabber.videoSettings();
+    	break;
+    	
+    	case 't':
+    	bThreshWithOpenCV = !bThreshWithOpenCV;
+    	break;
+    	
+    	case '>':
+    	case '.':
+    	farThreshold ++;
+    	if (farThreshold > 255) farThreshold = 255;
+    	break;
+    	
+    	case '<':
+    	case ',':
+    	farThreshold --;
+    	if (farThreshold < 0) farThreshold = 0;
+    	break;
+    	
+    	case '/':
+    	nearThreshold ++;
+    	if (nearThreshold > 255) nearThreshold = 255;
+    	break;
+    	
+    	case '_':
+    	nearThreshold --;
+    	if (nearThreshold < 0) nearThreshold = 0;
+    	break;
+    	
         case 'g':
-            bDustMask = !bDustMask;
-            break;
+        bDustMask = !bDustMask;
+        break;
+        
         case OF_KEY_UP:
-			angle++;
-			if(angle>30) angle=30;
-			kinect.setCameraTiltAngle(angle);
-			break;
-		case OF_KEY_DOWN:
-			angle--;
-			if(angle<-30) angle=-30;
-			kinect.setCameraTiltAngle(angle);
-			break;
+        angle++;
+        if(angle>30) angle=30;
+        kinect.setCameraTiltAngle(angle);
+        break;
+        
+        case OF_KEY_DOWN:
+        angle--;
+        if(angle<-30) angle=-30;
+        kinect.setCameraTiltAngle(angle);
+        break;
+        
         case 'd':
-            bDustColor = !bDustColor;
-			break;
+        bDustColor = !bDustColor;
+        break;
+        
         case 'z':
-            bStart = !bStart;
-            break;
-	}
+        bStart = !bStart;
+        break;
+        }
 }
 
 //--------------------------------------------------------------
