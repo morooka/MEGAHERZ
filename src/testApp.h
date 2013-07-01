@@ -40,8 +40,7 @@ class testApp : public ofBaseApp{
     std::vector<ofxCvBlob>::iterator blob2;
     
     int centroidX1,centroidY1,centroidX2,centroidY2,centroidX3,
-        centroidY3,centroidX4,centroidY4,centroidX12,centroidY12;
-    
+        centroidY3,centroidX4,centroidY4,centroidX12,centroidY12; 
     
     ofxSyphonServer mainOutputSyphonServer;
     
