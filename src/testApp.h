@@ -44,7 +44,6 @@ class testApp : public ofBaseApp{
     
     
     ofxSyphonServer mainOutputSyphonServer;
-    ofxSyphonClient client;
     
     ofxKinect kinect;
     
@@ -74,7 +73,7 @@ class testApp : public ofBaseApp{
     
     bool        bBrushDown,bDustColor,bHouseDustDraw,bStart;
     
-    ofTexture noise_tex;
+    ofTexture   noise_tex;
     
     int alpha;
     
